@@ -2,17 +2,93 @@ html {
     background-attachment: fixed;
     background-color: #039898;
     background-image: url("https://cyber.dabamos.de/images/backgrounds/green.gif");
-    display: table;
-    margin: auto;
+    width: 100%;
 }
 
 body {
-    margin-top: 10px;
-    margin-right: auto;
-    margin-left: auto;
-    display: grid;
-    vertical-align: middle;
-    gap: 15px;
+    margin: 0;
+}
+
+#menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: silver;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+
+    button {
+        position: relative;
+        left: 2px;
+        font-weight: bold;
+    }
+
+    input {
+        position: absolute;
+        right: 2px;
+        height: 23px;
+        width: 60px;
+        color: #000;
+        text-align: center;
+    }
+}
+
+#menu-popup {
+    padding: 3px;
+    position: fixed;
+    bottom: 27px;
+    left: 0;
+    display: none;
+    background-color: silver;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+    flex-direction: row;
+    font-family: "Pixelated MS Sans Serif", Arial, serif;
+    width: 172px;
+    z-index: 1000;
+
+    .title {
+        padding: 3px 2px 3px 3px;
+        color: #fff;
+        height: auto;
+        writing-mode: sideways-lr;
+        background-color: navy;
+        font-weight: bold;
+        font-size: larger;
+    }
+
+    .links {
+        :hover {
+            background-color: navy;
+            color: #fff;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        div {
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+
+            img {
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+body:has(#menu-popup .links div:hover) #menu-popup .title {
+    background-color: #808080;
+    color: #bfbfbf;
 }
 
 header {
@@ -20,14 +96,18 @@ header {
     flex-direction: row;
     justify-content: center;
     margin-bottom: 15px;
+
+    h1 {
+        font-family: serif;
+        font-size: 25px;
+        color: #fff;
+    }
 }
 
-h1 {
-    font-family: serif;
-}
 
 #saturn {
     width: 96px;
+    height: auto;
     transform: rotate(-75deg);
     filter: hue-rotate(180deg);
     animation: drop-shadow-and-hue-rotate 2s forwards steps(2, jump-both);

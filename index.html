@@ -16,12 +16,49 @@
     <link rel="icon" href="./media/saturn.png">
 </head>
 <body>
-<header>
-    <img id="saturn" src="./media/saturn.png" alt="saturn">
-    <h1>Welcome to my World Wide Web Server!</h1>
-</header>
+<div id="menu">
+    <button id="start-btn">Start</button>
+    <label>
+        <input disabled type="text" value="1:47 PM"/>
+    </label>
+</div>
+<div id="menu-popup">
+    <div class="title">opencodespace.org</div>
+    <div class="links">
+        <a href="#welcome">
+            <div><img src="./media/95-icons/Network%20Neighborhood%20(16x16px%20&%2032x32px).ico" alt="Network icon">
+                <p>Welcome</p></div>
+        </a>
+        <a href="#about">
+            <div><img src="./media/95-icons/Newspaper%20(white%203D).ico" alt="Newspaper icon">
+                <p>About me</p></div>
+        </a>
+        <a href="#btns">
+            <div><img src="./media/95-icons/Painting.ico" alt="Painting icon">
+                <p>Buttons</p></div>
+        </a>
+        <a href="#projects">
+            <div><img src="./media/95-icons/Folder.ico" alt="Folder icon">
+                <p>Projects</p></div>
+        </a>
+    </div>
+</div>
+<div class="window" id="welcome">
+    <div class="title-bar inactive">
+        <div class="title-bar-text">Welcome</div>
+        <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
+        </div>
+    </div>
+    <div class="window-body">
+        <img id="saturn" src="./media/saturn.png" alt="saturn">
+        <h1>Welcome to my World Wide Web Server!</h1>
+    </div>
+</div>
 <div class="window" id="about">
-    <div class="title-bar">
+    <div class="title-bar inactive">
         <div class="title-bar-text">about me</div>
         <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
@@ -99,7 +136,7 @@
     </div>
 </div>
 <div class="window" id="btns">
-    <div class="title-bar">
+    <div class="title-bar inactive">
         <div class="title-bar-text">buttons</div>
         <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
@@ -229,7 +266,7 @@
     </div>
 </div>
 <div class="window" id="my-btn">
-    <div class="title-bar">
+    <div class="title-bar inactive">
         <div class="title-bar-text">buttons</div>
         <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
@@ -248,12 +285,21 @@
         <ul class="tree-view" id="impl-my-btn">
             &lt;a href="https://me.opencodespace.org"&gt;
             <blockquote>&lt;picture&gt;</blockquote>
-            <blockquote><blockquote>&lt;source srcset="https://me.opencodespace.org/media/88x31.webp" type="image/webp"&gt;</blockquote></blockquote>
-            <blockquote><blockquote>&lt;img src="https://me.opencodespace.org/media/88x31.png" width="88" height="31" alt="wyatt"&gt;</blockquote></blockquote>
+            <blockquote>
+                <blockquote>&lt;source srcset="https://me.opencodespace.org/media/88x31.webp" type="image/webp"&gt;
+                </blockquote>
+            </blockquote>
+            <blockquote>
+                <blockquote>&lt;img src="https://me.opencodespace.org/media/88x31.png" width="88" height="31"
+                    alt="wyatt"&gt;
+                </blockquote>
+            </blockquote>
             <blockquote>&lt;/picture&gt;</blockquote>
             &lt;/a&gt;
         </ul>
-        <button onclick='(function(){navigator.clipboard.writeText(document.getElementById("impl-my-btn").textContent)})(); return false;'>Copy code</button>
+        <button onclick='(function(){navigator.clipboard.writeText(document.getElementById("impl-my-btn").textContent)})(); return false;'>
+            Copy code
+        </button>
     </div>
 </div>
 <details id="penguins">
@@ -307,5 +353,38 @@
 <span id="license">
     This website is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0</a>. All assets share this license. <br>
 </span>
+<script>
+    const windows = document.querySelectorAll(".window");
+    const startButton = document.getElementById("start-btn");
+    const menuPopup = document.getElementById("menu-popup");
+
+    windows.forEach((window) => {
+        window.onmouseover = function () {
+            const titleBar = window.querySelector(".title-bar");
+            titleBar.classList.remove("inactive");
+        };
+
+        window.onmouseleave = function () {
+            const titleBar = window.querySelector(".title-bar");
+            titleBar.classList.add("inactive");
+        };
+    })
+
+    startButton.onclick = function () {
+        if (menuPopup.style.display !== 'flex') {
+            menuPopup.style.display = 'flex';
+        } else {
+            menuPopup.style.display = 'none';
+        }
+    }
+
+    window.addEventListener(("click"), (event) => {
+        if (event.target !== menuPopup &&
+            event.target !== startButton &&
+            menuPopup.style.display === 'flex') {
+            menuPopup.style.display = 'none';
+        }
+    })
+</script>
 </body>
 </html>
