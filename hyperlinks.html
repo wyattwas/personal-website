@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="hyperlinks to my socials and stuff">
+    <meta name="keywords" content="tech, nerd, open-source, open-web, free-software, free, software, web, open">
+    <meta name="author" content="wyatt">
+    <meta name="theme-color" content="black">
+    <title>my hyperlinks</title>
+    <link rel="me" href="https://wetdry.world/@withoutwyatt">
+    <link rel="stylesheet" href="./style/hyperlinks.css">
+    <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+</head>
+<body>
+<script>
+    document.addEventListener('keydown', function (event) {
+            const links = document.querySelectorAll('main a');
+            let focusedIndex = -1;
+
+            links.forEach((link, index) => {
+                if (link === document.activeElement) {
+                    focusedIndex = index;
+                }
+            });
+
+            if (event.key === 'ArrowDown') {
+                event.preventDefault();
+
+                if (focusedIndex < links.length - 1) {
+                    links[focusedIndex + 1].focus();
+                } else {
+                    links[0].focus();
+                }
+            } else if (event.key === 'ArrowUp') {
+                event.preventDefault();
+
+                if (focusedIndex > 0) {
+                    links[focusedIndex - 1].focus();
+                } else {
+                    links[links.length - 1].focus();
+                }
+            } else if (event.key === 'e') {
+                window.open("https://github.com/wyattwas/website/hyperlinks.html", "_self");
+            } else if (event.key === 'c') {
+                window.open("https://matrix.to/#/@wyatt_was:matrix.org", "_self");
+            }
+        }
+    );
+</script>
+<h1>me.opencodespace.org/hyperlinks</h1>
+<main>
+    <a rel="me" href="https://wetdry.world/@withoutwyatt">Fediverse</a>
+    <a href="https://matrix.to/#/@wyatt_was:matrix.org">Matrix</a>
+    <a href="https://github.com/wyattwas">GitHub</a>
+    <a href="https://discord.com/users/809157716492419133">Discord</a>
+    <a href="https://reddit.com/u/wyatt_was">Reddit</a>
+    <a href="mailto:contact@opencodespace.org">Electronic Mail</a>
+</main>
+<p>Use the ↑ and ↓ keys to select which entry is highlighted.<br>Press enter to boot the selected OS, `e` to edit
+    the<br>commands before booting, or `c` for a command-line.</p>
+<span>
+    This website is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0</a>. All assets share this license. <br>
+    Shoutout to <a href="https://houl.floof.company">houl.floof.company</a> for the design inspo.
+</span>
+</body>
+</html>

@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "Terminus";
+    src: url("./../fonts/TerminusTTF-4.49.3.ttf");
+}
+
+html {
+    background-attachment: fixed;
+    background-color: #039898;
+    background-image: url("https://cyber.dabamos.de/images/backgrounds/green.gif");
+    display: table;
+    margin: auto;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: "Terminus", sans-serif;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 8px;
+    border: 5px ridge #ff43f2;
+    display: grid;
+    vertical-align: middle;
+}
+
+a {
+    color: #fff;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-family: serif;
+}
+
+#saturn {
+    width: 96px;
+    transform: rotate(-75deg);
+    filter: hue-rotate(180deg);
+    animation: drop-shadow-and-hue-rotate 2s forwards steps(2, jump-both);
+    position: relative;
+    top: -10px;
+    right: 10px;
+}
+
+@keyframes drop-shadow-and-hue-rotate {
+    0% {
+        filter: hue-rotate(180deg);
+    }
+    50% {
+        filter: hue-rotate(180deg) drop-shadow(-5px 5px 0 #ff43f2);
+    }
+    100% {
+        filter: hue-rotate(180deg) drop-shadow(-5px 5px 0 #ff43f2) drop-shadow(-5px 5px 0 #7256ff);
+    }
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#about table {
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#btns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    max-width: calc(88px * 8 + 8px * 7 + 4px);
+}
+
+#my-btn a {
+    display: block;
+    width: fit-content;
+    border: 1px solid #fff;
+}
+
+#my-btn-embed-code {
+    max-width: calc(100% - 2ch - 1px);
+    padding: 1ch;
+    resize: both;
+    overflow: auto;
+    background-color: #2c2163;
+    color: #fff;
+    border: 3px ridge #7256ff;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+ul {
+    list-style-type: square;
+}
+
+#penguins img {
+    width: 100px;
+}
+
+#license {
+    margin-top: 15px;
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background: #afafaf;
+        color: #000;
+    }
+
+    a {
+        color: #000;
+    }
+
+    #my-btn-embed-code {
+        color: #fff;
+    }
+}
