@@ -185,18 +185,3 @@ header {
 #license {
     margin-top: 15px;
 }
-
-@media (prefers-color-scheme: light) {
-    body {
-        background: #afafaf;
-        color: #000;
-    }
-
-    a {
-        color: #000;
-    }
-
-    #my-btn-embed-code {
-        color: #fff;
-    }
-}
