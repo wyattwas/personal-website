@@ -400,7 +400,7 @@
       var s = today.getSeconds();
       m = checkTime(m);
       s = checkTime(s);
-      document.getElementById('time').value = h + ":" + m;
+      document.getElementById('time').value = today.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
       t = setTimeout(function() {
         startTime()
       }, 500);
