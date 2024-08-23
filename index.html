@@ -400,7 +400,7 @@
       var s = today.getSeconds();
       m = checkTime(m);
       s = checkTime(s);
-      document.getElementById('time').innerHTML = h + ":" + m;
+      document.getElementById('time').value = h + ":" + m;
       t = setTimeout(function() {
         startTime()
       }, 500);
