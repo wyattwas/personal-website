@@ -19,7 +19,7 @@
 <div id="menu">
     <button id="start-btn">Start</button>
     <label>
-        <input disabled type="text" value="1:47 PM"/>
+        <input disabled type="text" value="" id="time"/>
     </label>
 </div>
 <div id="menu-popup">
@@ -385,6 +385,27 @@
             menuPopup.style.display = 'none';
         }
     })
+
+    function checkTime(i) {
+      if (i < 10) {
+        i = "0" + i;
+      }
+      return i;
+    }
+
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('time').innerHTML = h + ":" + m;
+      t = setTimeout(function() {
+        startTime()
+      }, 500);
+    }
+    startTime();
 </script>
 </body>
 </html>
