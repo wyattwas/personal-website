@@ -311,4 +311,5 @@ body:has(#menu-popup .links div:hover) #menu-popup .title {
 
 #license {
     margin-top: 15px;
+    color: #fff;
 }
