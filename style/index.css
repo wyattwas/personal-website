@@ -9,6 +9,19 @@ body {
     margin: 0;
 }
 
+.window-options {
+    margin: 0 4px 0 4px;
+    padding: 3px 4px 3px 4px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    border-bottom: 3px solid #d9d9d2;
+
+    :first-letter {
+        text-decoration: underline;
+    }
+}
+
 #menu {
     position: fixed;
     bottom: 0;
@@ -46,7 +59,7 @@ body {
     box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
     flex-direction: row;
     font-family: "Pixelated MS Sans Serif", Arial, serif;
-    width: 172px;
+    width: 191px;
     z-index: 1000;
 
     .title {
@@ -62,7 +75,15 @@ body {
     .links {
         :hover {
             background-color: navy;
-            color: #fff;
+        }
+
+        :first-letter {
+            text-decoration: underline;
+        }
+
+        hr {
+            padding-right: 3px;
+            width: auto;
         }
 
         a {
@@ -70,8 +91,12 @@ body {
             text-decoration: none;
         }
 
+        a:hover {
+            color: #fff;
+        }
+
         div {
-            width: 150px;
+            width: 170px;
             height: 50px;
             text-align: center;
             display: flex;
@@ -91,29 +116,31 @@ body:has(#menu-popup .links div:hover) #menu-popup .title {
     color: #bfbfbf;
 }
 
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 15px;
-
-    h1 {
-        font-family: serif;
-        font-size: 25px;
-        color: #fff;
-    }
-}
-
-
 #saturn {
     width: 96px;
     height: auto;
     transform: rotate(-75deg);
     filter: hue-rotate(180deg);
-    animation: drop-shadow-and-hue-rotate 2s forwards steps(2, jump-both);
-    position: relative;
-    top: -10px;
-    right: 10px;
+    animation: drop-shadow-and-hue-rotate 2s forwards steps(2, jump-both),
+    hor-movement 3.141s infinite alternate linear, hor-movement 1.414s infinite alternate linear ;
+}
+
+@keyframes hor-movement {
+    from {
+        margin-left: 0;
+    }
+    to {
+        margin-left: 100%;
+    }
+}
+
+@keyframes ver-movement {
+    from {
+        margin-top: 0;
+    }
+    to {
+        margin-top: 100%;
+    }
 }
 
 @keyframes drop-shadow-and-hue-rotate {
@@ -140,8 +167,33 @@ header {
     }
 }
 
-#about table {
-    margin-bottom: 15px;
+#about {
+    table {
+        margin-bottom: 15px;
+        background-color: transparent;
+
+        tr {
+            border: solid 5px transparent;
+        }
+    }
+
+    input[type="text"]:read-only {
+        background-color: #fff;
+        color: #000;
+    }
+
+    input[type="radio"]:disabled + label {
+        color: #000;
+        text-shadow: none;
+    }
+
+    input[type="radio"]:disabled + label::before {
+        background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='12' height='12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 0H4v1H2v1H1v2H0v4h1v2h1V8H1V4h1V2h2V1h4v1h2V1H8V0z' fill='gray'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 1H4v1H2v2H1v4h1v1h1V8H2V4h1V3h1V2h4v1h2V2H8V1z' fill='%23000'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 3h1v1H9V3zm1 5V4h1v4h-1zm-2 2V9h1V8h1v2H8zm-4 0v1h4v-1H4zm0 0V9H2v1h2z' fill='%23DFDFDF'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11 2h-1v2h1v4h-1v2H8v1H4v-1H2v1h2v1h4v-1h2v-1h1V8h1V4h-1V2z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4 2h4v1h1v1h1v4H9v1H8v1H4V9H3V8H2V4h1V3h1V2z' fill='%23fff'/%3E%3C/svg%3E")
+    }
+
+    input[type="radio"]:disabled + label::after {
+        background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='4' height='4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3 0H1v1H0v2h1v1h2V3h1V1H3V0z' fill='%23000'/%3E%3C/svg%3E")
+    }
 }
 
 #btns {
@@ -167,14 +219,6 @@ header {
 
     .tree-view {
         margin-bottom: 8px;
-    }
-
-    button {
-        position: relative;
-        justify-self: right;
-        float: right;
-        margin-bottom: 8px;
-        font-weight: revert;
     }
 }
 

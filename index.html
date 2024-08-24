@@ -23,7 +23,7 @@
     </label>
 </div>
 <div id="menu-popup">
-    <div class="title">opencodespace.org</div>
+    <div class="title">www.opencodespace.org</div>
     <div class="links">
         <a href="#welcome">
             <div><img src="./media/95-icons/Network%20Neighborhood%20(16x16px%20&%2032x32px).ico" alt="Network icon">
@@ -40,6 +40,11 @@
         <a href="#projects">
             <div><img src="./media/95-icons/Folder.ico" alt="Folder icon">
                 <p>Projects</p></div>
+        </a>
+        <hr>
+        <a href="hyperlinks.html">
+            <div><img src="./media/95-icons/Turn%20Off%20Computer%20(display%20only).ico" alt="Computer icon">
+                <p>My hyperlinks</p></div>
         </a>
     </div>
 </div>
@@ -66,73 +71,124 @@
             <button aria-label="Close"></button>
         </div>
     </div>
+    <div class="window-options">
+        <div class="window-options-point">File</div>
+        <div class="window-options-point">Edit</div>
+        <div class="window-options-point">View</div>
+        <div class="window-options-point">Options</div>
+        <div class="window-options-point">Help</div>
+    </div>
     <div class="window-body">
-        <p>There's so much room for activities!</p>
-        <div class="sunken-panel">
-            <table>
-                <tr>
-                    <td>name</td>
-                    <td>wyatt</td>
-                </tr>
-                <tr>
-                    <td>age</td>
-                    <td>18<br>(December, 22th)</td>
-                </tr>
-                <tr>
-                    <td>interests</td>
-                    <td>
-                        <ul>
-                            <li>tech</li>
-                            <li>space</li>
-                            <li>physics</li>
-                            <li>free software</li>
-                            <li>programming</li>
-                            <li>tech (i think i said that already)</li>
-                            <li>politics</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        technology<br>
-                        <img src="https://cyber.dabamos.de/images/monitor.gif" alt="retro computer">
-                    </td>
-                    <td>
-                        <ul>
-                            <li>AMD Ryzen 5 7600X</li>
-                            <li>Nvidia GTX 1050Ti</li>
-                            <li>Arch Linux (i use arch btw)</li>
-                            <li>Hyprland</li>
-                            <a href="./media/neofetch">(my setup)</a>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>languages</td>
-                    <td>
-                        <ul>
-                            <li>German</li>
-                            <li>English</li>
-                            <li>Java</li>
-                            <li>JavaScript</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>socials</td>
-                    <td>
-                        <a href="hyperlinks.html">my hyperlinks</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>politics</td>
-                    <td>
-                        <a href="https://i.pinimg.com/736x/4d/e5/8a/4de58ab49c3face438a908119f225a60.jpg">socialism</a>
-                    </td>
-                </tr>
-            </table>
-        </div>
+        <section class="tabs" style="max-width: 500px">
+            <menu role="tablist">
+                <button role="tab" aria-selected="true" aria-controls="view">View</button>
+                <button role="tab" aria-controls="new">New</button>
+                <button role="tab" aria-controls="edit">Edit</button>
+            </menu>
+            <article class="window" id="view" role="tabpanel">
+                <p>Please enter information about you.</p>
+                <table>
+                    <tr>
+                        <td>name</td>
+                        <td>
+                            <input readonly type="text" value="wyatt">
+                        </td>
+                        <td>pronouns</td>
+                        <td>
+                            <input readonly type="text" value="he/they">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>age</td>
+                        <td>
+                            <input readonly type="text" value="18">
+                        </td>
+                    </tr>
+                </table>
+                <fieldset>
+                    <legend>interests</legend>
+                    <div class="field-row">
+                        <input disabled checked type="radio" id="tech">
+                        <label for="tech">tech</label>
+                    </div>
+                    <div class="field-row">
+                        <input disabled checked type="radio" id="space">
+                        <label for="space">space</label>
+                    </div>
+                    <div class="field-row">
+                        <input disabled checked type="radio" id="physics">
+                        <label for="physics">physics</label>
+                    </div>
+                    <div class="field-row">
+                        <input disabled checked type="radio" id="free-software">
+                        <label for="free-software">free software</label>
+                    </div>
+                    <div class="field-row">
+                        <input disabled checked type="radio" id="programming">
+                        <label for="programming">programming</label>
+                    </div>
+                    <div class="field-row">
+                        <input disabled checked type="radio" id="tech-again">
+                        <label for="tech-again">tech (i think i said that already)</label>
+                    </div>
+                    <div class="field-row">
+                        <input checked type="radio" id="politics">
+                        <label for="politics">politics</label>
+                    </div>
+                </fieldset>
+            </article>
+            <article id="new" role="tabpanel" hidden>
+                hello there
+            </article>
+            <article id="edit" role="tabpanel" hidden>
+                hello there
+            </article>
+        </section>
+        <table>
+            <tr>
+                <td>
+                    technology<br>
+                    <img src="https://cyber.dabamos.de/images/monitor.gif" alt="retro computer">
+                </td>
+                <td>
+                    <ul>
+                        <li>AMD Ryzen 5 7600X</li>
+                        <li>Nvidia GTX 1050Ti</li>
+                        <li>Arch Linux (i use arch btw)</li>
+                        <li>Hyprland</li>
+                        <a href="./media/neofetch">(my setup)</a>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>languages</td>
+                <td>
+                    <ul>
+                        <li>German</li>
+                        <li>English</li>
+                        <li>Java</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>socials</td>
+                <td>
+                    <a href="hyperlinks.html">my hyperlinks</a>
+                </td>
+            </tr>
+            <tr>
+                <td>politics</td>
+                <td>
+                    <a href="https://i.pinimg.com/736x/4d/e5/8a/4de58ab49c3face438a908119f225a60.jpg">socialism</a>
+                </td>
+            </tr>
+        </table>
         <p>feel free to <a href="hyperlinks.html">message</a> me when you visit.</p>
+        <section class="field-row" style="justify-content: flex-end">
+            <button>OK</button>
+            <button>Cancel</button>
+        </section>
     </div>
 </div>
 <div class="window" id="btns">
@@ -297,9 +353,11 @@
             <blockquote>&lt;/picture&gt;</blockquote>
             &lt;/a&gt;
         </ul>
-        <button onclick='(function(){navigator.clipboard.writeText(document.getElementById("impl-my-btn").textContent)})(); return false;'>
-            Copy code
-        </button>
+        <section class="field-row" style="justify-content: flex-end">
+            <button onclick='(function(){navigator.clipboard.writeText(document.getElementById("impl-my-btn").textContent)})(); return false;'>
+                Copy code
+            </button>
+        </section>
     </div>
 </div>
 <details id="penguins">
@@ -357,16 +415,17 @@
     const windows = document.querySelectorAll(".window");
     const startButton = document.getElementById("start-btn");
     const menuPopup = document.getElementById("menu-popup");
+    const menuPopupTitle = menuPopup.getElementsByClassName("title")[0];
 
     windows.forEach((window) => {
         window.onmouseover = function () {
             const titleBar = window.querySelector(".title-bar");
-            titleBar.classList.remove("inactive");
+            if (titleBar !== null) titleBar.classList.remove("inactive");
         };
 
         window.onmouseleave = function () {
             const titleBar = window.querySelector(".title-bar");
-            titleBar.classList.add("inactive");
+            if (titleBar !== null) titleBar.classList.add("inactive");
         };
     })
 
@@ -381,31 +440,101 @@
     window.addEventListener(("click"), (event) => {
         if (event.target !== menuPopup &&
             event.target !== startButton &&
+            event.target !== menuPopupTitle &&
             menuPopup.style.display === 'flex') {
             menuPopup.style.display = 'none';
         }
     })
 
     function checkTime(i) {
-      if (i < 10) {
-        i = "0" + i;
-      }
-      return i;
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
     }
 
     function startTime() {
-      var today = new Date();
-      var h = today.getHours();
-      var m = today.getMinutes();
-      var s = today.getSeconds();
-      m = checkTime(m);
-      s = checkTime(s);
-      document.getElementById('time').value = today.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-      t = setTimeout(function() {
-        startTime()
-      }, 500);
+        var today = new Date();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('time').value = today.toLocaleString('en-US', {
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: true
+        });
+        t = setTimeout(function () {
+            startTime()
+        }, 500);
     }
+
     startTime();
+</script>
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        // Only handle one particular tablist; if you have multiple tab
+        // lists (might even be nested), you have to apply this code for each one
+        const tabList = document.querySelector('[role="tablist"]');
+        const tabs = tabList.querySelectorAll(':scope > [role="tab"]');
+
+        // Add a click event handler to each tab
+        tabs.forEach((tab) => {
+            tab.addEventListener("click", changeTabs);
+        });
+
+        // Enable arrow navigation between tabs in the tab list
+        let tabFocus = 0;
+
+        tabList.addEventListener("keydown", (e) => {
+            // Move right
+            if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+                tabs[tabFocus].setAttribute("tabindex", -1);
+                if (e.key === "ArrowRight") {
+                    tabFocus++;
+                    // If we're at the end, go to the start
+                    if (tabFocus >= tabs.length) {
+                        tabFocus = 0;
+                    }
+                    // Move left
+                } else if (e.key === "ArrowLeft") {
+                    tabFocus--;
+                    // If we're at the start, move to the end
+                    if (tabFocus < 0) {
+                        tabFocus = tabs.length - 1;
+                    }
+                }
+
+                tabs[tabFocus].setAttribute("tabindex", 0);
+                tabs[tabFocus].focus();
+            }
+        });
+    });
+
+    function changeTabs(e) {
+        const targetTab = e.target;
+        const tabList = targetTab.parentNode;
+        const tabGroup = tabList.parentNode;
+
+        // Remove all current selected tabs
+        tabList
+            .querySelectorAll(':scope > [aria-selected="true"]')
+            .forEach((t) => t.setAttribute("aria-selected", false));
+
+        // Set this tab as selected
+        targetTab.setAttribute("aria-selected", true);
+
+        // Hide all tab panels
+        tabGroup
+            .querySelectorAll(':scope > [role="tabpanel"]')
+            .forEach((p) => p.setAttribute("hidden", true));
+
+        // Show the selected panel
+        tabGroup
+            .querySelector(`#${targetTab.getAttribute("aria-controls")}`)
+            .removeAttribute("hidden");
+    }
+
 </script>
 </body>
 </html>
