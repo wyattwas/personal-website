@@ -383,7 +383,59 @@ I probably forgot to put some stuff and I will likely update this.
         </div>
     </div>
 </div>
-<details id="penguins">
+<div class="window" id="penguins">
+    <div class="title-bar inactive">
+        <div class="title-bar-text">Welcome to www.opencodespace.org!</div>
+        <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
+        </div>
+    </div>
+    <div class="window-options">
+        <div class="window-options-point">File</div>
+        <div class="window-options-point">Edit</div>
+        <div class="window-options-point">View</div>
+        <div class="window-options-point">Options</div>
+        <div class="window-options-point">Help</div>
+    </div>
+    <div class="window-body">
+        <div class="files">
+            <textarea rows="1">All Folders</textarea>
+            <ul class="tree-view">
+                <li>
+                    <details open>
+                        <summary><img src="./media/95-icons/Drive.ico" alt="Drive icon">C:/</summary>
+                        <ul>
+                            <li>
+                                <details open>
+                                    <summary><img src="./media/95-icons/Painting.ico">Pictures</summary>
+                                    <ul>
+                                        <li>
+                                            <details id="penguin-files" open>
+                                                <summary><img src="./media/95-icons/Opened%20Folder.ico">penguin :3</summary>
+                                                <ul id="fileViewerImages">
+                                                    <li aria-selected="true" id="club-penguin">club-penguin.gif</li>
+                                                    <li id="tux">tux.png</li>
+                                                    <li id="real-penguins">real-penguins.jpg</li>
+                                                </ul>
+                                            </details>
+                                        </li>
+                                    </ul>
+                                </details>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </div>
+        <div class="viewer">
+            <textarea rows="1">View File</textarea>
+            <iframe src="./media/club-penguin.gif" id="image-viewer"></iframe>
+        </div>
+    </div>
+</div>
+<details>
     <summary>I also really like penguins :3</summary>
     <img src="./media/club-penguin.gif" alt="club penguin">
     <img src="https://www.pc-freak.net/pictures/penguins/tux_huge.png" alt="tux">
@@ -550,6 +602,49 @@ I probably forgot to put some stuff and I will likely update this.
         article.removeAttribute("hidden");
     }
 
+</script>
+<script>
+    const fileViewerImages = document.querySelectorAll("#fileViewerImages > li")
+
+    fileViewerImages.forEach((fileViewerImage) =>
+        fileViewerImage.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            fileViewerImages.forEach((fileViewerImage) => {
+                if (fileViewerImage.id ===
+                    event.target.id) {
+                    fileViewerImage.setAttribute("aria-selected", true);
+                    displayImage(event, event.target.id);
+                } else {
+                    fileViewerImage.setAttribute("aria-selected", false);
+                }
+            })
+        })
+    )
+
+    function displayImage(event, id) {
+        const imageViewerIframe = document.getElementById("image-viewer");
+
+        if (id === "club-penguin") {
+            imageViewerIframe.src = "./media/club-penguin.gif";
+        } else if (id === "tux") {
+            imageViewerIframe.src = "https://www.pc-freak.net/pictures/penguins/tux_huge.png";
+        } else {
+            imageViewerIframe.src = "https://i.natgeofe.com/n/9dce4946-8f87-4d16-acd7-f14b1ef7e12c/emperor-penguin_01_square.jpg";
+        }
+    }
+</script>
+<script>
+    const penguinFiles = document.getElementById("penguin-files");
+    const image = document.querySelector("#penguin-files > summary > img");
+
+    penguinFiles.addEventListener("click", (event) => {
+        if (penguinFiles.open === true) {
+            image.src = "./media/95-icons/Opened%20Folder.ico"
+        } else {
+            image.src = "./media/95-icons/Folder.ico"
+        }
+    })
 </script>
 </body>
 </html>

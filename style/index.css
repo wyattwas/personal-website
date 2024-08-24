@@ -265,8 +265,48 @@ body:has(#menu-popup .links div:hover) #menu-popup .title {
     }
 }
 
-#penguins img {
-    width: 100px;
+#penguins {
+    .window-body {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .tree-view img {
+        height: 12px;
+        width: auto;
+        margin-right: 5px;
+    }
+
+    .files {
+        width: 30%;
+    }
+
+    .viewer {
+        width: 70%;
+    }
+
+    textarea {
+        resize: none;
+        background-color: silver;
+        width: 100%;
+    }
+
+    iframe {
+        width: 100%;
+    }
+
+    img {
+        width: 100px;
+    }
+}
+
+#fileViewerImages > li {
+    cursor: default;
+}
+
+#fileViewerImages > li[aria-selected="true"] {
+    background-color: navy;
+    color: #fff;
 }
 
 #license {
