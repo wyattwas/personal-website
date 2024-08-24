@@ -1,38 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
-  <title>Welcome to www.opencodespace.org</title>
-  <style>
-    body {
-      background: #fff;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The atrocious making of a wild, tech affine, nerdy, human being">
+    <meta name="keywords" content="tech, nerd, open-source, open-web, free-software, free, software, web, open">
+    <meta name="author" content="wyatt">
+    <meta name="theme-color" content="black">
+    <title>Welcome to www.opencodespace.org!</title>
+    <link rel="me" href="https://wetdry.world/@withoutwyatt">
+    <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <link rel="icon" href="./media/saturn.png">
+    <style>
+        body {
+            font-family: Serif, sans-serif;
+            background: #fff;
+        }
 
-    #saturn {
-        width: 96px;
-        height: auto;
-        transform: rotate(-75deg);
-        filter: hue-rotate(180deg);
-        animation: drop-shadow-and-hue-rotate 2s forwards steps(2, jump-both),
-        hor-movement 3.141s infinite alternate linear, hor-movement 1.414s infinite alternate linear;
-    }
+        h1 {
+            font-size: 25px;
+        }
 
-    @keyframes drop-shadow-and-hue-rotate {
-        0% {
+        #saturn {
+            position: relative;
+            top: -25px;
+            width: 96px;
+            height: auto;
+            transform: rotate(-75deg);
             filter: hue-rotate(180deg);
+            animation: drop-shadow-and-hue-rotate 2s forwards steps(2, jump-both),
+            hor-movement 3.141s infinite alternate linear, hor-movement 1.414s infinite alternate linear;
         }
-        50% {
-            filter: hue-rotate(180deg) drop-shadow(-5px 5px 0 #ff43f2);
+
+        @keyframes drop-shadow-and-hue-rotate {
+            0% {
+                filter: hue-rotate(180deg);
+            }
+            50% {
+                filter: hue-rotate(180deg) drop-shadow(-5px 5px 0 #ff43f2);
+            }
+            100% {
+                filter: hue-rotate(180deg) drop-shadow(-5px 5px 0 #ff43f2) drop-shadow(-5px 5px 0 #7256ff);
+            }
         }
-        100% {
-            filter: hue-rotate(180deg) drop-shadow(-5px 5px 0 #ff43f2) drop-shadow(-5px 5px 0 #7256ff);
-        }
-    }
-  </style>
+    </style>
 </head>
 <body>
-Welcome to my World Wide Web Server!
-
+<h1>Welcome to my World Wide Web Server!</h1>
 <img id="saturn" src="./media/saturn.png" alt="saturn">
 </body>
 </html>
