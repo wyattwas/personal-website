@@ -385,7 +385,7 @@ I probably forgot to put some stuff and I will likely update this.
 </div>
 <div class="window" id="penguins">
     <div class="title-bar inactive">
-        <div class="title-bar-text">Welcome to www.opencodespace.org!</div>
+        <div class="title-bar-text">I like penguins :3</div>
         <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
             <button aria-label="Maximize"></button>
@@ -419,6 +419,10 @@ I probably forgot to put some stuff and I will likely update this.
                                                     <li aria-selected="true" id="club-penguin">club-penguin.gif</li>
                                                     <li id="tux">tux.png</li>
                                                     <li id="real-penguins">real-penguins.jpg</li>
+                                                    <li id="penguin-family">penguin-family.jpeg</li>
+                                                    <li id="penguin-love">penguin-love.jpg</li>
+                                                    <li id="penguin-closeup">penguin-closeup.jpg</li>
+                                                    <li id="young-penguins">young-penguins.jpg</li>
                                                 </ul>
                                             </details>
                                         </li>
@@ -480,11 +484,14 @@ I probably forgot to put some stuff and I will likely update this.
         </div>
         <div class="window" role="tabpanel" id="design" hidden>
             <ul>
-                For the Windows 95/98 style I am using a css library called <a
-                    href="https://jdan.github.io/98.css">98.css</a>
-                The Background Image is from <a href="https://cyber.dabamos.de">https://cyber.dabamos.de</a>
-                (technically an
-                Image, maybe I should put it in the images tab?)
+                <li>
+                    For the Windows 95/98 style I am using a css library called <a href="https://jdan.github.io/98.css">98.css</a>
+                </li>
+                <li>
+                    The Background Image is from <a href="https://cyber.dabamos.de">https://cyber.dabamos.de</a>
+                    (technically an
+                    Image, maybe I should put it in the images tab?)
+                </li>
             </ul>
         </div>
         <div class="window" role="tabpanel" id="images" hidden>
@@ -494,6 +501,7 @@ I probably forgot to put some stuff and I will likely update this.
                 </li>
                 <li>Tux: from <a href="https://www.pc-freak.net">https://www.pc-freak.net</a></li>
                 <li>real penguins: from <a href="https://i.natgeofe.com">https://i.natgeofe.com</a></li>
+                <li>The entire icon pack: from <a href="https://archive.org/details/windows-95-all-icons">https://archive.org</a></li>
             </ul>
         </div>
     </div>
@@ -644,8 +652,16 @@ I probably forgot to put some stuff and I will likely update this.
             imageViewerIframe.src = "./media/club-penguin.gif";
         } else if (id === "tux") {
             imageViewerIframe.src = "https://www.pc-freak.net/pictures/penguins/tux_huge.png";
-        } else {
+        } else if (id === "real-penguins") {
             imageViewerIframe.src = "https://i.natgeofe.com/n/9dce4946-8f87-4d16-acd7-f14b1ef7e12c/emperor-penguin_01_square.jpg";
+        } else if (id === "penguin-family") {
+            imageViewerIframe.src = "https://images.squarespace-cdn.com/content/v1/583f1d3803596e2b365ce32e/1485395322122-HDU9O5OMCLCNESR71AE0/emperor-penguins";
+        } else if (id === "penguin-love") {
+            imageViewerIframe.src = "https://upload.wikimedia.org/wikipedia/commons/b/b7/A_pair_of_African_penguins%2C_Boulders_Beach%2C_South_Africa.jpg";
+        } else if (id === "penguin-closeup") {
+            imageViewerIframe.src = "https://static1.wikia.nocookie.net/__cb20120623094937/animals/images/2/28/King_Penguin_Closeup.jpg";
+        } else if (id === "young-penguins") {
+            imageViewerIframe.src = "https://1.bp.blogspot.com/-SYhnctUYALw/Tj2S1EHnb1I/AAAAAAAACbw/vvE_r45Z8nY/s1600/Antarctica-Emperor_Penguin-original-1.jpg";
         }
     }
 </script>

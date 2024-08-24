@@ -309,6 +309,10 @@ body:has(#menu-popup .links div:hover) #menu-popup .title {
     color: #fff;
 }
 
+#credits ul {
+    list-style: square;
+}
+
 #license {
     margin-top: 15px;
     color: #fff;
