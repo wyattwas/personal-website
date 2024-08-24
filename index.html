@@ -64,7 +64,7 @@
 </div>
 <div class="window" id="about">
     <div class="title-bar inactive">
-        <div class="title-bar-text">about me</div>
+        <div class="title-bar-text">About me</div>
         <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
             <button aria-label="Maximize"></button>
@@ -79,116 +79,124 @@
         <div class="window-options-point">Help</div>
     </div>
     <div class="window-body">
-        <section class="tabs" style="max-width: 500px">
-            <menu role="tablist">
-                <button role="tab" aria-selected="true" aria-controls="view">View</button>
-                <button role="tab" aria-controls="new">New</button>
-                <button role="tab" aria-controls="edit">Edit</button>
-            </menu>
-            <article class="window" id="view" role="tabpanel">
-                <p>Please enter information about you.</p>
-                <table>
-                    <tr>
-                        <td>name</td>
-                        <td>
+        <section class="field-row" style="justify-content: flex-start">
+            <button>Open</button>
+            <button>New</button>
+        </section>
+        <div class="window">
+            <div class="window-body">
+                <section class="field-row" style="justify-content: flex-start; display: flex; align-items: center;">
+                    <img src="./media/95-icons/User.ico" alt="User icon"
+                         style="margin-right: 8px; position: relative; top: -5px"> View person
+                </section>
+                <div class="wrap text">
+                    <div>
+                        <label>Name
                             <input readonly type="text" value="wyatt">
-                        </td>
-                        <td>pronouns</td>
-                        <td>
-                            <input readonly type="text" value="he/they">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>age</td>
-                        <td>
+                        </label>
+                        <label>Age
                             <input readonly type="text" value="18">
-                        </td>
-                    </tr>
-                </table>
-                <fieldset>
-                    <legend>interests</legend>
-                    <div class="field-row">
-                        <input disabled checked type="radio" id="tech">
-                        <label for="tech">tech</label>
+                        </label>
                     </div>
-                    <div class="field-row">
-                        <input disabled checked type="radio" id="space">
-                        <label for="space">space</label>
+                    <div>
+                        <label>Pronouns
+                            <input readonly type="text" value="he/they">
+                        </label>
+                        <label>Sexuality
+                            <input readonly type="text" value="pan">
+                        </label>
                     </div>
-                    <div class="field-row">
-                        <input disabled checked type="radio" id="physics">
-                        <label for="physics">physics</label>
+                    <div>
+                        <label>fav. Color
+                            <input readonly type="text" value="yellow/purple">
+                        </label>
+                        <label>fav .Game
+                            <input readonly type="text" value="Minecraft">
+                        </label>
                     </div>
-                    <div class="field-row">
-                        <input disabled checked type="radio" id="free-software">
-                        <label for="free-software">free software</label>
-                    </div>
-                    <div class="field-row">
-                        <input disabled checked type="radio" id="programming">
-                        <label for="programming">programming</label>
-                    </div>
-                    <div class="field-row">
-                        <input disabled checked type="radio" id="tech-again">
-                        <label for="tech-again">tech (i think i said that already)</label>
-                    </div>
-                    <div class="field-row">
-                        <input checked type="radio" id="politics">
-                        <label for="politics">politics</label>
-                    </div>
-                </fieldset>
-            </article>
-            <article id="new" role="tabpanel" hidden>
-                hello there
-            </article>
-            <article id="edit" role="tabpanel" hidden>
-                hello there
-            </article>
-        </section>
-        <table>
-            <tr>
-                <td>
-                    technology<br>
-                    <img src="https://cyber.dabamos.de/images/monitor.gif" alt="retro computer">
-                </td>
-                <td>
-                    <ul>
-                        <li>AMD Ryzen 5 7600X</li>
-                        <li>Nvidia GTX 1050Ti</li>
-                        <li>Arch Linux (i use arch btw)</li>
-                        <li>Hyprland</li>
-                        <a href="./media/neofetch">(my setup)</a>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td>languages</td>
-                <td>
-                    <ul>
-                        <li>German</li>
-                        <li>English</li>
-                        <li>Java</li>
-                        <li>JavaScript</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td>socials</td>
-                <td>
-                    <a href="hyperlinks.html">my hyperlinks</a>
-                </td>
-            </tr>
-            <tr>
-                <td>politics</td>
-                <td>
-                    <a href="https://i.pinimg.com/736x/4d/e5/8a/4de58ab49c3face438a908119f225a60.jpg">socialism</a>
-                </td>
-            </tr>
-        </table>
-        <p>feel free to <a href="hyperlinks.html">message</a> me when you visit.</p>
-        <section class="field-row" style="justify-content: flex-end">
-            <button>OK</button>
-            <button>Cancel</button>
-        </section>
+                </div>
+                <div class="wrap">
+                    <fieldset>
+                        <legend>Interests</legend>
+                        <div class="field-row">
+                            <input disabled checked type="radio" id="tech">
+                            <label for="tech">tech</label>
+                        </div>
+                        <div class="field-row">
+                            <input disabled checked type="radio" id="space">
+                            <label for="space">space</label>
+                        </div>
+                        <div class="field-row">
+                            <input disabled checked type="radio" id="physics">
+                            <label for="physics">physics</label>
+                        </div>
+                        <div class="field-row">
+                            <input disabled checked type="radio" id="free-software">
+                            <label for="free-software">free software</label>
+                        </div>
+                        <div class="field-row">
+                            <input disabled checked type="radio" id="programming">
+                            <label for="programming">programming</label>
+                        </div>
+                        <div class="field-row">
+                            <input disabled checked type="radio" id="tech-again">
+                            <label for="tech-again">tech (i think i said that already)</label>
+                        </div>
+                        <div class="field-row">
+                            <input checked type="radio" id="politics">
+                            <label for="politics">politics</label>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Languages</legend>
+                        <div class="field-row">
+                            <input disabled checked type="radio" id="german">
+                            <label for="german">german</label>
+                        </div>
+                        <div class="field-row">
+                            <input disabled checked type="radio" id="english">
+                            <label for="english">english</label>
+                        </div>
+                        <div class="field-row">
+                            <input disabled checked type="radio" id="java">
+                            <label for="java">java</label>
+                        </div>
+                        <div class="field-row">
+                            <input disabled checked type="radio" id="javascript">
+                            <label for="javascript">javascript</label>
+                        </div>
+                    </fieldset>
+                    <fieldset style="display: flex; align-items: center">
+                        <legend>Image</legend>
+                        <img src="./media/club-penguin.gif" alt="club penguin" style="height: 100px">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Hyperlinks</legend>
+                        <a href="hyperlinks.html">
+                            <img src="./media/95-icons/Link%20on%20Document%20with%20Earth.ico"
+                                 alt="Link on document with earth icon">
+                        </a>
+                    </fieldset>
+                </div>
+                <div class="field-row-stacked" style="width: 100%">
+                    <label for="text-about">Additional notes</label>
+                    <textarea readonly id="text-about" rows="10">Hello there! Welcome to my personal web server.
+
+As you might have guessed from the design, I am a big fan of retro tech and style. I am a software developer in the making.
+I am developing mostly in Java. I love space and physics. I am also a big advocate for open-source software as well as for a free and open web.
+I like to host my own things, set up PCs and other things.
+
+fell free to message me when you visit.
+
+I probably forgot to put some stuff and I will likely update this.
+            </textarea>
+                </div>
+                <section class="field-row" style="justify-content: flex-end">
+                    <button>Save</button>
+                    <button>Cancel</button>
+                </section>
+            </div>
+        </div>
     </div>
 </div>
 <div class="window" id="btns">

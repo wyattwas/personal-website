@@ -194,6 +194,43 @@ body:has(#menu-popup .links div:hover) #menu-popup .title {
     input[type="radio"]:disabled + label::after {
         background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='4' height='4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3 0H1v1H0v2h1v1h2V3h1V1H3V0z' fill='%23000'/%3E%3C/svg%3E")
     }
+
+    .wrap {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .wrap.text {
+        div {
+            display: flex;
+            flex-direction: column;
+
+            img {
+                height: 100%;
+            }
+
+            label {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                text-align: right;
+                width: 200px;
+                line-height: 26px;
+                margin-bottom: 10px;
+            }
+
+            input {
+                height: 20px;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+#text-about {
+    resize: vertical;
 }
 
 #btns {
