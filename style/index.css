@@ -7,6 +7,7 @@ html {
 
 body {
     margin: 0;
+    padding-bottom: 30px;
 }
 
 .window-options {
@@ -168,15 +169,6 @@ body:has(#menu-popup .links div:hover) #menu-popup .title {
 }
 
 #about {
-    table {
-        margin-bottom: 15px;
-        background-color: transparent;
-
-        tr {
-            border: solid 5px transparent;
-        }
-    }
-
     input[type="text"]:read-only {
         background-color: #fff;
         color: #000;
@@ -226,6 +218,10 @@ body:has(#menu-popup .links div:hover) #menu-popup .title {
                 margin-left: 10px;
             }
         }
+    }
+
+    .field-row-stacked {
+        margin-top: 8px;
     }
 }
 

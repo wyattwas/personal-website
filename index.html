@@ -170,14 +170,12 @@
                         <legend>Image</legend>
                         <img src="./media/club-penguin.gif" alt="club penguin" style="height: 100px">
                     </fieldset>
-                    <fieldset>
-                        <legend>Hyperlinks</legend>
-                        <a href="hyperlinks.html">
-                            <img src="./media/95-icons/Link%20on%20Document%20with%20Earth.ico"
-                                 alt="Link on document with earth icon">
-                        </a>
-                    </fieldset>
                 </div>
+                <section class="field-row" style="justify-content: flex-end">
+                    <form action="hyperlinks.html">
+                        <input type="submit" value="Hyperlinks" />
+                    </form>
+                </section>
                 <div class="field-row-stacked" style="width: 100%">
                     <label for="text-about">Additional notes</label>
                     <textarea readonly id="text-about" rows="10">Hello there! Welcome to my personal web server.
@@ -463,10 +461,7 @@ I probably forgot to put some stuff and I will likely update this.
 
     function startTime() {
         var today = new Date();
-        var m = today.getMinutes();
-        var s = today.getSeconds();
-        m = checkTime(m);
-        s = checkTime(s);
+
         document.getElementById('time').value = today.toLocaleString('en-US', {
             hour: 'numeric',
             minute: 'numeric',
