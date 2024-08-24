@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>Welcome to www.opencodespace.org</title>
+  <style>
+    body {
+      background: #fff;
+    }
+
+    #saturn {
+        width: 96px;
+        height: auto;
+        transform: rotate(-75deg);
+        filter: hue-rotate(180deg);
+        animation: drop-shadow-and-hue-rotate 2s forwards steps(2, jump-both),
+        hor-movement 3.141s infinite alternate linear, hor-movement 1.414s infinite alternate linear;
+    }
+
+    @keyframes drop-shadow-and-hue-rotate {
+        0% {
+            filter: hue-rotate(180deg);
+        }
+        50% {
+            filter: hue-rotate(180deg) drop-shadow(-5px 5px 0 #ff43f2);
+        }
+        100% {
+            filter: hue-rotate(180deg) drop-shadow(-5px 5px 0 #ff43f2) drop-shadow(-5px 5px 0 #7256ff);
+        }
+    }
+  </style>
+</head>
+<body>
+Welcome to my World Wide Web Server!
+
+<img id="saturn" src="./media/saturn.png" alt="saturn">
+</body>
+</html>

@@ -33,6 +33,14 @@ menu[role="tablist"] > li > span {
     }
 }
 
+iframe {
+    background-color: #fff;
+    box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+    box-sizing: border-box;
+    padding: 3px 4px;
+    border: none;
+}
+
 #menu {
     position: fixed;
     bottom: 0;
@@ -127,43 +135,35 @@ body:has(#menu-popup .links div:hover) #menu-popup .title {
     color: #bfbfbf;
 }
 
-#saturn {
-    width: 96px;
-    height: auto;
-    transform: rotate(-75deg);
-    filter: hue-rotate(180deg);
-    animation: drop-shadow-and-hue-rotate 2s forwards steps(2, jump-both),
-    hor-movement 3.141s infinite alternate linear, hor-movement 1.414s infinite alternate linear ;
+#welcome {
+    .window-body {
+        margin: 0;
+    }
+
+    .address-bar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 3px 0 3px 0;
+
+        span {
+            margin: 0 5px 0 5px;
+        }
+
+        textarea {
+            width: 100%;
+            resize: none;
+        }
+    }
+
+    iframe {
+        width: 100%;
+    }
 }
 
-@keyframes hor-movement {
-    from {
-        margin-left: 0;
-    }
-    to {
-        margin-left: 100%;
-    }
-}
-
-@keyframes ver-movement {
-    from {
-        margin-top: 0;
-    }
-    to {
-        margin-top: 100%;
-    }
-}
-
-@keyframes drop-shadow-and-hue-rotate {
-    0% {
-        filter: hue-rotate(180deg);
-    }
-    50% {
-        filter: hue-rotate(180deg) drop-shadow(-5px 5px 0 #ff43f2);
-    }
-    100% {
-        filter: hue-rotate(180deg) drop-shadow(-5px 5px 0 #ff43f2) drop-shadow(-5px 5px 0 #7256ff);
-    }
+#address {
+    resize: none;
+    width: 100%;
 }
 
 .window {

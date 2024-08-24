@@ -50,16 +50,26 @@
 </div>
 <div class="window" id="welcome">
     <div class="title-bar inactive">
-        <div class="title-bar-text">Welcome</div>
+        <div class="title-bar-text">Welcome to www.opencodespace.org!</div>
         <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
             <button aria-label="Maximize"></button>
             <button aria-label="Close"></button>
         </div>
     </div>
+    <div class="window-options">
+        <div class="window-options-point">File</div>
+        <div class="window-options-point">Edit</div>
+        <div class="window-options-point">View</div>
+        <div class="window-options-point">Options</div>
+        <div class="window-options-point">Help</div>
+    </div>
     <div class="window-body">
-        <img id="saturn" src="./media/saturn.png" alt="saturn">
-        <h1>Welcome to my World Wide Web Server!</h1>
+        <div class="address-bar">
+            <span>Address</span>
+            <textarea readonly rows="1">https://www.opencodespace.org</textarea>
+        </div>
+        <iframe src="welcome.html"></iframe>
     </div>
 </div>
 <div class="window" id="about">
@@ -373,7 +383,6 @@ I probably forgot to put some stuff and I will likely update this.
         </div>
     </div>
 </div>
-
 <details id="penguins">
     <summary>I also really like penguins :3</summary>
     <img src="./media/club-penguin.gif" alt="club penguin">
