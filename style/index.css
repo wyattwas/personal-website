@@ -271,18 +271,23 @@ body:has(#menu-popup .links div:hover) #menu-popup .title {
         flex-direction: row;
     }
 
-    .tree-view img {
-        height: 12px;
-        width: auto;
-        margin-right: 5px;
-    }
+    .viewer {
+         width: 70%;
+     }
 
     .files {
+        min-width: 194px;
         width: 30%;
-    }
 
-    .viewer {
-        width: 70%;
+        .tree-view {
+            min-height: 182px;
+
+            img {
+                height: 12px;
+                width: auto;
+                margin-right: 5px;
+            }
+        }
     }
 
     textarea {
