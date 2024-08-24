@@ -10,6 +10,16 @@ body {
     padding-bottom: 30px;
 }
 
+.window[role="tabpanel"] {
+    margin-top: 0;
+}
+
+menu[role="tablist"] > li > span {
+    color: #222;
+    display: block;
+    margin: 6px;
+}
+
 .window-options {
     margin: 0 4px 0 4px;
     padding: 3px 4px 3px 4px;
@@ -233,7 +243,7 @@ body:has(#menu-popup .links div:hover) #menu-popup .title {
     max-width: calc(88px * 8 + 8px * 7 + 4px);
 }
 
-#btns .window-body {
+#buttons .window-body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -243,7 +253,7 @@ body:has(#menu-popup .links div:hover) #menu-popup .title {
     margin-top: 15px;
 }
 
-#my-btn {
+#my-button {
     a {
         display: block;
         margin-bottom: 8px;
