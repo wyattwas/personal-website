@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body>
+<p>The requested page, <code>
+  <!--#echo var="REQUEST_URI" --></code>,
+  does not work properly.</p>
+
+<p>Click <a href='<!--#echo var="HTTP_REFERER" -->'>here</a> to return from whence you came.</p>
+
+<fieldset>
+  <legend>Error Message</legend>
+  <xmp>
+    <!--#echo var="REDIRECT_ERROR_NOTES" -->
+  </xmp>
+</fieldset>
+
+<!--
+<!--#echo var="HTTP_USER_AGENT" -->
+<!--#echo var="REDIRECT_STATUS" -->
+-->
+</body>
+</html>
