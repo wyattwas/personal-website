@@ -3,3 +3,10 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^.]+)$ $1.html [NC, L]
+
+
+RewriteRule ^(.*).html$ http://domain.tld/$1 [R=301,L]
+RewriteRule ^(.*).htm$  http://domain.tld/$1 [R=301,L]
+RewriteRule ^(.*).php$  http://domain.tld/$1 [R=301,L]
+
+ErrorDocument 404 404.php
