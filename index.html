@@ -243,7 +243,7 @@ I probably forgot to put some stuff and I will likely update this.
 
                 <a href="https://www.mozilla.org/en-US/firefox/new">
                     <picture>
-                        <img class="btn" src="https://sneexy.pages.gay/assets/buttons/software/getfirefox.gif"
+                        <img class="btn" src="https://sneexy.pages.gay/assets/buttons/software/firefox.png"
                              alt="Get Firefox">
                     </picture>
                 </a>
@@ -409,11 +409,11 @@ I probably forgot to put some stuff and I will likely update this.
                         <ul>
                             <li>
                                 <details open>
-                                    <summary><img src="./media/95-icons/Painting.ico">Pictures</summary>
+                                    <summary><img src="./media/95-icons/Painting.ico" alt="Painting">Pictures</summary>
                                     <ul>
                                         <li>
                                             <details id="penguin-files" open>
-                                                <summary><img src="./media/95-icons/Opened%20Folder.ico">penguin :3
+                                                <summary><img src="./media/95-icons/Opened%20Folder.ico" alt="Opened Folder">penguin :3
                                                 </summary>
                                                 <ul id="fileViewerImages">
                                                     <li aria-selected="true" id="club-penguin">club-penguin.gif</li>
@@ -672,7 +672,7 @@ I probably forgot to put some stuff and I will likely update this.
     const penguinFiles = document.getElementById("penguin-files");
     const image = document.querySelector("#penguin-files > summary > img");
 
-    penguinFiles.addEventListener("click", (event) => {
+    penguinFiles.addEventListener("click", () => {
         if (penguinFiles.open === true) {
             image.src = "./media/95-icons/Opened%20Folder.ico"
         } else {
