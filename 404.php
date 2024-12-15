@@ -7,7 +7,7 @@
     <title>404 - Not Found!</title>
 </head>
 <body>
-<h1>404 - Not Found!</h1>
+<h1 style="margin-top: 0;">Not Found</h1>
 The site you were trying to reach doesn't seem to exist.<br>
 Please check the URL and try again.
 <hr>
