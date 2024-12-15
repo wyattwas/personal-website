@@ -14,7 +14,6 @@ If you think this is a mistake, <a href="https://github.com/wyattwas/personal-we
 You can also contact the server admin at <a href="mailto: <?php echo $_SERVER['SERVER_ADMIN']; ?>" ><?php echo $_SERVER['SERVER_ADMIN']; ?></a>
 </p>
 <hr>
-<address>Apache/2.4.62 (Debian) Server at www.opencodespace.org Port 443</address>
 <address><i><?php echo $_SERVER['SERVER_SOFTWARE'] . ' Server at ' . $_SERVER['SERVER_NAME'] . ' Port ' . $_SERVER['SERVER_PORT']; ?></i></address>
 </body>
 </html>
