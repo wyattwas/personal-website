@@ -36,8 +36,14 @@ curl_close($curl);
 $response = json_decode($response, true);
 
 for ($i = 0; $i < 4; $i++): ?>
+    <?php if (sizeof($response[$i]['emojis']) > 0) {
+        foreach ($response[$i]['emojis'] as $emoji) {
+            $response[$i]['content'] = str_replace(':' . $emoji['shortcode'] . ':', '<img src="' . $emoji['url'] . '" alt="' . $emoji['shortcode'] . '" style="max-height: 24px">', $response[$i]['content']);
+        }
+    } ?>
     <div style="margin: 5px 0 5px 0; border: 1px black solid; padding: 5px">
-        <a href="https://wetdry.world/@<?= $response[$i]['account']['username'] ?>" target="_blank" style="color: inherit; text-decoration: inherit">
+        <a href="https://wetdry.world/@<?= $response[$i]['account']['username'] ?>" target="_blank"
+           style="color: inherit; text-decoration: inherit">
             <div style="display: flex; align-items: center; gap: 10px">
                 <img style="height: 50px; width: 50px;" src="<?= $response[$i]['account']['avatar'] ?>"
                      alt="Account Avatar">
@@ -53,8 +59,8 @@ for ($i = 0; $i < 4; $i++): ?>
             <div>
                 <?= $response[$i]['content'] ?>
             </div>
-            <?php foreach ($response[$i]['media_attachments'] as $image):?>
-            <img src="<?= $image['url'] ?>" alt="Image" style="max-width: 100%; max-height: 100px">
+            <?php foreach ($response[$i]['media_attachments'] as $image): ?>
+                <img src="<?= $image['url'] ?>" alt="Image" style="max-width: 100%; max-height: 100px">
             <?php endforeach; ?>
         </a>
         <div><?= date('D, d M Y H:i:s', strtotime($response[$i]['created_at'])) ?></div>
