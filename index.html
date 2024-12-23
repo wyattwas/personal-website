@@ -617,22 +617,15 @@ I probably forgot to put some stuff and I will likely update this.
         }
     })
 
-    function checkTime(i) {
-        if (i < 10) {
-            i = "0" + i;
-        }
-        return i;
-    }
-
     function startTime() {
-        var today = new Date();
+        const today = new Date();
 
         document.getElementById('time').value = today.toLocaleString('en-US', {
             hour: 'numeric',
             minute: 'numeric',
             hour12: true
         });
-        t = setTimeout(function () {
+        const t = setTimeout(function () {
             startTime()
         }, 500);
     }
