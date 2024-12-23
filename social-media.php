@@ -53,6 +53,9 @@ for ($i = 0; $i < 4; $i++): ?>
             <div>
                 <?= $response[$i]['content'] ?>
             </div>
+            <?php foreach ($response[$i]['media_attachments'] as $image):?>
+            <img src="<?= $image['url'] ?>" alt="Image" style="max-width: 100%; max-height: 100px">
+            <?php endforeach; ?>
         </a>
         <div><?= date('D, d M Y H:i:s', strtotime($response[$i]['created_at'])) ?></div>
     </div>
