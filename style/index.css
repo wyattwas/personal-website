@@ -135,7 +135,7 @@ body:has(#menu-popup .links div:hover) #menu-popup .title {
     color: #bfbfbf;
 }
 
-#welcome {
+#welcome, #fedi-posts {
     .window-body {
         margin: 0;
     }
@@ -159,6 +159,10 @@ body:has(#menu-popup .links div:hover) #menu-popup .title {
     iframe {
         width: 100%;
     }
+}
+
+#fedi-posts iframe {
+    height: 500px;
 }
 
 #address {
