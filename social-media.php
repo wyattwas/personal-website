@@ -41,30 +41,78 @@ for ($i = 0; $i < 4; $i++): ?>
             $response[$i]['content'] = str_replace(':' . $emoji['shortcode'] . ':', '<img src="' . $emoji['url'] . '" alt="' . $emoji['shortcode'] . '" style="max-height: 24px">', $response[$i]['content']);
         }
     } ?>
-    <div style="margin: 5px 0 5px 0; border: 1px black solid; padding: 5px">
-        <a href="https://wetdry.world/@<?= $response[$i]['account']['username'] ?>" target="_blank"
-           style="color: inherit; text-decoration: inherit">
-            <div style="display: flex; align-items: center; gap: 10px">
-                <img style="height: 50px; width: 50px;" src="<?= $response[$i]['account']['avatar'] ?>"
-                     alt="Account Avatar">
-                <span style="display: flex; flex-direction: column; gap: 5px">
+    <?php if ($response[$i]['reblog'] != null) : ?>
+        <div style="margin: 5px 0 5px 0; border: 1px black solid; padding: 5px">
+            <a href="<?= $response[$i]['account']['url'] ?>" target="_blank"
+               style="color: inherit; text-decoration: inherit">
+                <div style="display: flex; align-items: center; gap: 10px">
+                    <span style="display: flex; flex-direction: column; gap: 5px; font-size: smaller">
+                        <strong>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 -960 960 960" width="15"
+                                 class="icon icon-retweet" aria-hidden="true">
+                                <path d="M280-80 120-240l160-160 56 58-62 62h406v-160h80v240H274l62 62-56 58Zm-80-440v-240h486l-62-62 56-58 160 160-160 160-56-58 62-62H280v160h-80Z"></path>
+                            </svg>
+                            <?= $response[$i]['account']['display_name'] ?> boosted
+                        </strong>
+                    </span>
+                </div>
+            </a>
+            <a href="<?= $response[$i]['reblog']['account']['url'] ?>" target="_blank"
+               style="color: inherit; text-decoration: inherit">
+                <div style="display: flex; align-items: center; gap: 10px">
+                    <img style="height: 50px; width: 50px;" src="<?= $response[$i]['reblog']['account']['avatar'] ?>"
+                         alt="Account Avatar">
+                    <span style="display: flex; flex-direction: column; gap: 5px">
+                            <bdi>
+                                <strong><?= $response[$i]['reblog']['account']['display_name'] ?></strong>
+                            </bdi>
+                            <span>@<?= $response[$i]['reblog']['account']['username'] ?>@<?php
+                                preg_match('/https?:\/\/([^\/]+)/', $response[$i]['reblog']['account']['url'], $matches);
+                                echo $matches[1];
+                                ?></span>
+                        </span>
+                </div>
+            </a>
+            <a href="<?= $response[$i]['reblog']['url'] ?>" target="_blank"
+               style="color: inherit; text-decoration: inherit">
+                <div>
+                    <?= $response[$i]['reblog']['content'] ?>
+                </div>
+                <?php foreach ($response[$i]['reblog']['media_attachments'] as $image): ?>
+                    <img src="<?= $image['url'] ?>" alt="Image" style="max-width: 100%; max-height: 100px">
+                <?php endforeach; ?>
+            </a>
+            <div><?= date('D, d M Y H:i:s', strtotime($response[$i]['created_at'])) ?></div>
+        </div>
+    <?php else: ?>
+        <div style="margin: 5px 0 5px 0; border: 1px black solid; padding: 5px">
+            <a href="<?= $response[$i]['account']['url'] ?>" target="_blank"
+               style="color: inherit; text-decoration: inherit">
+                <div style="display: flex; align-items: center; gap: 10px">
+                    <img style="height: 50px; width: 50px;" src="<?= $response[$i]['account']['avatar'] ?>"
+                         alt="Account Avatar">
+                    <span style="display: flex; flex-direction: column; gap: 5px">
                             <bdi>
                                 <strong><?= $response[$i]['account']['display_name'] ?></strong>
                             </bdi>
-                            <span>@<?= $response[$i]['account']['username'] ?>@wetdry.world</span>
+                            <span>@<?= $response[$i]['account']['username'] ?>@<?php
+                                preg_match('/https?:\/\/([^\/]+)/', $response[$i]['account']['url'], $matches);
+                                echo $matches[1];
+                                ?></span>
                         </span>
-            </div>
-        </a>
-        <a href="<?= $response[$i]['url'] ?>" target="_blank" style="color: inherit; text-decoration: inherit">
-            <div>
-                <?= $response[$i]['content'] ?>
-            </div>
-            <?php foreach ($response[$i]['media_attachments'] as $image): ?>
-                <img src="<?= $image['url'] ?>" alt="Image" style="max-width: 100%; max-height: 100px">
-            <?php endforeach; ?>
-        </a>
-        <div><?= date('D, d M Y H:i:s', strtotime($response[$i]['created_at'])) ?></div>
-    </div>
+                </div>
+            </a>
+            <a href="<?= $response[$i]['url'] ?>" target="_blank" style="color: inherit; text-decoration: inherit">
+                <div>
+                    <?= $response[$i]['content'] ?>
+                </div>
+                <?php foreach ($response[$i]['media_attachments'] as $image): ?>
+                    <img src="<?= $image['url'] ?>" alt="Image" style="max-width: 100%; max-height: 100px">
+                <?php endforeach; ?>
+            </a>
+            <div><?= date('D, d M Y H:i:s', strtotime($response[$i]['created_at'])) ?></div>
+        </div>
+    <?php endif; ?>
 <?php endfor; ?>
 </body>
 </html>
