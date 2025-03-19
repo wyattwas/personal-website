@@ -12,8 +12,23 @@
     <link rel="me" href="https://wetdry.world/@withoutwyatt">
     <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
     <link rel="icon" href="./media/saturn.png">
+    <style>
+        body {
+            & > div {
+                padding: 5px 8px;
+            }
+
+            & > div:nth-child(odd) {
+                background-color: #e6e6e6;
+            }
+        }
+    </style>
 </head>
-<body>
+<body style="margin: 0">
+<div style="padding: 10px; position: sticky; top: 0; background-color: black; color: white; display: flex; justify-content: space-between">
+    Quacks from me
+    <a href="https://wetdry.world/@withoutwyatt" style="color: white">Visit my social media page</a>
+</div>
 <?php
 $curl = curl_init();
 
@@ -42,7 +57,7 @@ for ($i = 0; $i < 4; $i++): ?>
         }
     } ?>
     <?php if ($response[$i]['reblog'] != null) : ?>
-        <div style="margin: 5px 0 5px 0; border: 1px black solid; padding: 5px">
+        <div>
             <a href="<?= $response[$i]['account']['url'] ?>" target="_blank"
                style="color: inherit; text-decoration: inherit">
                 <div style="display: flex; align-items: center; gap: 10px">
@@ -60,7 +75,8 @@ for ($i = 0; $i < 4; $i++): ?>
             <a href="<?= $response[$i]['reblog']['account']['url'] ?>" target="_blank"
                style="color: inherit; text-decoration: inherit">
                 <div style="display: flex; align-items: center; gap: 10px">
-                    <img style="height: 50px; width: 50px;" src="<?= $response[$i]['reblog']['account']['avatar'] ?>"
+                    <img style="height: 50px; width: 50px;"
+                         src="<?= $response[$i]['reblog']['account']['avatar'] ?>"
                          alt="Account Avatar">
                     <span style="display: flex; flex-direction: column; gap: 5px">
                             <bdi>
@@ -85,7 +101,7 @@ for ($i = 0; $i < 4; $i++): ?>
             <div><?= date('D, d M Y H:i:s', strtotime($response[$i]['created_at'])) ?></div>
         </div>
     <?php else: ?>
-        <div style="margin: 5px 0 5px 0; border: 1px black solid; padding: 5px">
+        <div>
             <a href="<?= $response[$i]['account']['url'] ?>" target="_blank"
                style="color: inherit; text-decoration: inherit">
                 <div style="display: flex; align-items: center; gap: 10px">
