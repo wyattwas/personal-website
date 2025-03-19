@@ -27,7 +27,7 @@
 <body style="margin: 0">
 <div style="padding: 10px; position: sticky; top: 0; background-color: black; color: white; display: flex; justify-content: space-between">
     Quacks from me
-    <a href="https://wetdry.world/@withoutwyatt" style="color: white">Visit my social media page</a>
+    <a target="_blank" href="https://wetdry.world/@withoutwyatt" style="color: white">Visit my social media page</a>
 </div>
 <?php
 $curl = curl_init();
