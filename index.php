@@ -109,7 +109,7 @@
                                 $date_of_birth = date_create('2005-12-22');
                             $current_date = new DateTime();
                             $age = date_diff($date_of_birth, $current_date);
-                            echo $interval->format('%R%y');
+                            echo $age->format('%R%y');
                             ?>>
                         </label>
                     </div>
