@@ -106,11 +106,11 @@
                         </label>
                         <label>Age
                             <input readonly type="text" value=<?php
-                              $date_of_birth = date_create('2016-06-01');
-                              $current_date = date();
-                              $age = date_diff($datetime1, $datetime2);
-                              echo $interval->format('%R%y');
-                                ?>>
+                                $date_of_birth = date_create('2016-06-01');
+                            $current_date = date();
+                            $age = date_diff($datetime1, $datetime2);
+                            echo $interval->format('%R%y');
+                            ?>>
                         </label>
                     </div>
                     <div>
