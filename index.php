@@ -105,7 +105,12 @@
                             <input readonly type="text" value="wyatt">
                         </label>
                         <label>Age
-                            <input readonly type="text" value="19">
+                            <input readonly type="text" value=<?php
+                                $date_of_birth = date_create('2005-12-22');
+                            $current_date = new DateTime();
+                            $age = date_diff($date_of_birth, $current_date);
+                            echo $age->format('%y');
+                            ?>>
                         </label>
                     </div>
                     <div>
